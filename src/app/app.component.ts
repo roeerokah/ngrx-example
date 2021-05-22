@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngrx-component';
+  itemList = [
+    {
+      name: 'shluftzuk',
+      checked: false,
+  },{
+      name: 'shlifzak',
+      checked: true,
+  },
+  ];
 }

@@ -123,6 +123,17 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngrx-component"
+    }
+  },
+  "defaultProject": "ngrx-component",
+  "cli": {
+    "analytics": "34c94c31-c199-424e-a3e7-f5a157c8c1e9"
+  },
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "changeDetection": "OnPush"
+      }
+    }
+  }
 }
