@@ -1,0 +1,18 @@
+{
+  "/api": {
+    "target": "https://api.themoviedb.org",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/image": {
+    "target": "https://image.tmdb.org",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/image": ""
+    }
+  }
+}
