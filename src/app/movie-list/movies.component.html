@@ -1,7 +1,9 @@
 <ul class="movie-list-container">
   <li #movieElm *ngFor="let movie of (movies | async).results; trackBy: movieId"
+       class="movie-item"
        (mouseleave)="movieElm.classList.remove('movie-hover')"
-       (mouseenter)="movieElm.classList.add('movie-hover')">
+       (mouseenter)="movieElm.classList.add('movie-hover')"
+       routerLink="/movies/{{movie.id}}">
     <div class="title">
       {{movie.title}}
     </div>

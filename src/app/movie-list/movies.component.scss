@@ -1,0 +1,93 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn:    mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as `color` or `typography`.
+$candy-app-theme: mat-light-theme((
+  color: (
+    primary: $candy-app-primary,
+    accent: $candy-app-accent,
+    warn: $candy-app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);
+
+.movie-list-container {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style-type: none;
+  flex-wrap: wrap;
+  list-style-type: none;
+
+  .movie-item {
+    display: block;
+    position: relative;
+  }
+}
+
+.title {
+  text-align: center;
+  color: white;
+  display: none;
+  position: absolute;
+  top: 110px;
+  width: 122px;
+  z-index: 1;
+}
+.movie-hover {
+  .title {
+    display: inline;
+  }
+}
+.image-container {
+  margin-bottom: 10px;
+  border: 1px solid #dfe1e5;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 183px;
+  margin-right: 12px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.4s;
+  width: 122px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+

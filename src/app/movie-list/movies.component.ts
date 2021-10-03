@@ -1,14 +1,15 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MoviesService } from '../movies.service';
-import { EMPTY, of } from 'rxjs';
+import { MoviesStore } from '../services/movie.store';
 
 @Component({
   selector: 'app-movie-list',
-  templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.scss'],
+  templateUrl: './movies.component.html',
+  styleUrls: ['./movies.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [MoviesService, MoviesStore],
 })
-export class MovieListComponent implements OnInit {
+export class MoviesComponent implements OnInit {
   movies;
 
   constructor(private movieService: MoviesService) {}
